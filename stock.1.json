@@ -1,0 +1,21 @@
+[{
+  "StockPrice": "118.50",
+  "StockCode": "00-SCREW6777",
+  "BarCode": "6008741005357",
+  "StockDescription": "NAD SCREW-IT WHITE 290ML"
+}, {
+  "StockPrice": "163.00",
+  "StockCode": "0271-1",
+  "BarCode": "",
+  "StockDescription": "EPT PLASTIC BOTTLE + CAP"
+}, {
+  "StockPrice": "42.00",
+  "StockCode": "0400",
+  "BarCode": "",
+  "StockDescription": "ALN SKI ROPE 10MMX15MT"
+}, {
+  "StockPrice": "152.50",
+  "StockCode": "0567",
+  "BarCode": "",
+  "StockDescription": "EPT PREVAL SPRAYER WITH GLASS JAR"
+}]

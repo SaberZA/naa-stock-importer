@@ -3441,9 +3441,9 @@ wtf-8@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wtf-8/-/wtf-8-1.0.0.tgz#392d8ba2d0f1c34d1ee2d630f15d0efb68e1048a"
 
-xlsx-to-json-lc@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/xlsx-to-json-lc/-/xlsx-to-json-lc-0.2.5.tgz#54f69f6e1418f62884aa27ae37e0af147cd68b2c"
+xlsx-to-json@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/xlsx-to-json/-/xlsx-to-json-0.2.4.tgz#037daf5f19d32efeb74bef54c6dfb4e2d9787bd5"
   dependencies:
     csv "~0.3.6"
     xlsx "0.7.6-g"
