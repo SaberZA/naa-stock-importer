@@ -14,7 +14,7 @@ module.exports = {
   parseJson: function (req, res) {
     var jsonStringArray = fs.readFile("stock.json", function (err, data) {
       if (err) {
-        res.serverError(err);
+        return res.serverError(err);
       }
       var stockArray = JSON.parse(data);
 
@@ -24,22 +24,35 @@ module.exports = {
   upload: function (req, res) {
     req.file('stockFile').upload(function (err, files) {
       if (err) {
-        res.serverError(err);
+        return res.serverError(err);
       }
 
       if (!files[0].fd.toLowerCase().endsWith('.xlsx')) {
-        res.serverError('invalid upload format!');
+        return res.serverError('invalid upload format!');
       }
 
-      XlsxToJsonService.convert(files[0].fd, "stock.json")
+      var folder = "imports";
+      var todayString = DateService.dateToday();
+      var outputFileName = "stock-" + todayString +".json";
+
+      XlsxToJsonService.convert(files[0].fd, folder + "/" + outputFileName)
         .then(function (data) {
+
+          sails.models.stocklisting.create({
+            payload: data
+          }).exec(function(err, listingRecord) {
+            if (err) { return res.serverError(err); }
+
+            sails.log('Latest Stock Listing has an ID of ' + listingRecord.id);
+          });
+
           res.view('importComplete', {
             title: 'Stock Importer',
             message: files.length + ' file(s) uploaded successfully',
             files: files
           })
         }).catch(function (err) {
-          res.serverError(err);
+          return res.serverError(err);
         });
     });
   }

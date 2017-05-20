@@ -74,14 +74,18 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  // somePostgresqlServer: {
-  //   adapter: 'sails-postgresql',
-  //   host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-  //   user: 'YOUR_POSTGRES_USER', // optional
-  //   password: 'YOUR_POSTGRES_PASSWORD', // optional
-  //   database: 'YOUR_POSTGRES_DB' //optional
+  naaPostgresServer: {
+    adapter: 'sails-postgresql',
+    host: 'ec2-54-247-99-159.eu-west-1.compute.amazonaws.com',
+    user: 'pkhptmuilwplkm', // optional
+    password: '06609d7a37d778a910e7e41a11d9ea3645e5c1a2eb39aecd7ad28c09db162ef8', // optional
+    database: 'd7jqvvb2453gp2', //optional
+    ssl: 'require'
+  }
+  // naaPostgresServer: {
+  //   url: 'postgres://pkhptmuilwplkm:06609d7a37d778a910e7e41a11d9ea3645e5c1a2eb39aecd7ad28c09db162ef8@ec2-54-247-99-159.eu-west-1.compute.amazonaws.com:5432/d7jqvvb2453gp2',
+  //   ssl: 'require'
   // }
-
 
   /***************************************************************************
   *                                                                          *

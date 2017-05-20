@@ -41,6 +41,7 @@ module.exports.routes = {
       title: 'Stock Importer'
     }
   },
+  'post /importer': 'StockImportController.upload',
   'get /parseJson': 'StockImportController.parseJson',
   'get /importComplete': {
     view: 'importComplete',
