@@ -36,22 +36,16 @@ module.exports = {
       var outputFileName = "stock-" + todayString +".json";
 
       XlsxToJsonService.convert(files[0].fd, folder + "/" + outputFileName)
-        .then(function (data) {
+        .then(StockListingDbService.saveStockListing)
+        .then(function (listingRecord) {
 
-          sails.models.stocklisting.create({
-            payload: data
-          }).exec(function(err, listingRecord) {
-            if (err) { return res.serverError(err); }
-
-            sails.log('Latest Stock Listing has an ID of ' + listingRecord.id);
-          });
-
-          res.view('importComplete', {
+          return res.view('importComplete', {
             title: 'Stock Importer',
             message: files.length + ' file(s) uploaded successfully',
             files: files
-          })
+          });
         }).catch(function (err) {
+          sails.log('Server Error has occurred: ' + err);
           return res.serverError(err);
         });
     });
