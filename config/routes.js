@@ -41,15 +41,17 @@ module.exports.routes = {
       title: 'Stock Importer'
     }
   },
+  'get /viewLatestStockListing' : 'StockItemViewController.viewAll',
+  // 'get /viewLatestStockListing' : {
+  //   view: 'viewLatestStockListing'
+  // },
   'post /importer': 'StockImportController.upload',
   'get /parseJson': 'StockImportController.parseJson',
   'get /importComplete': {
     view: 'importComplete',
     locals: {
       title: 'Stock Importer'
-   },
-   'post /stockItem': 'StockItemController.insert',
-   'get /stockItem': 'StockItemController.get'
+    }
   }
 
   /***************************************************************************

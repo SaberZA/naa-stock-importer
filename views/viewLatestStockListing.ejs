@@ -1,0 +1,16 @@
+<div class="default-page">
+  <div class="header">
+    <h1 id="main-title" class="container"><%= __('NAA Stock Importer') %></h1>
+    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+  </div>
+  <div class="main container clearfix">
+    <section id="latestListing">
+    <h1>List of stockItems</h1>
+    <ul>
+        <% for (var i=0; i<stockItems.length; i++) { %>
+        <li><%= stockItems[i].StockCode %> : <%= stockItems[i].BarCode %> : <%= stockItems[i].StockDescription %> : <%= stockItems[i].StockPrice %></li>
+        <% } %>
+    </ul>
+</section>
+  </div>
+</div>
