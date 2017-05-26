@@ -9,6 +9,7 @@ var fs = require('fs');
 var xlsxj = require("xlsx-to-json");
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('temp-db.sqlite');
+var path = require('path');
 
 module.exports = {
   parseJson: function (req, res) {
@@ -33,7 +34,7 @@ module.exports = {
 
       var folder = "imports";
       var todayString = DateService.dateToday();
-      var outputFileName = "stock-" + todayString +".json";
+      var outputFileName = "stock-" + todayString + ".json";
 
       XlsxToJsonService.convert(files[0].fd, folder + "/" + outputFileName)
         .then(StockListingDbService.saveStockListing)
@@ -48,6 +49,16 @@ module.exports = {
           sails.log('Server Error has occurred: ' + err);
           return res.serverError(err);
         });
+    });
+  },
+  downloadLatest: function (req, res) {
+    var filePath = path.resolve(__dirname, '../../stock.json');
+    fs.readFile(filePath, function (err, fileData) {
+      if (err) {
+        return res.serverError(err);
+      }
+      res.attachment('stock.json');
+      return res.send(200, fileData)
     });
   }
 };

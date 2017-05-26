@@ -6,11 +6,22 @@
   <div class="main container clearfix">
     <section id="latestListing">
     <h1>List of stockItems</h1>
-    <ul>
+    <table>
+      <tr>
+        <th>Stock Code</th>
+        <th>Barcode</th>
+        <th>Stock Description</th>
+        <th>Price</th>
+      </tr>
         <% for (var i=0; i<stockItems.length; i++) { %>
-        <li><%= stockItems[i].StockCode %> : <%= stockItems[i].BarCode %> : <%= stockItems[i].StockDescription %> : <%= stockItems[i].StockPrice %></li>
+        <tr>
+          <td><%= stockItems[i].StockCode %></td>
+          <td><%= stockItems[i].BarCode %></td>
+          <td><%= stockItems[i].StockDescription %></td>
+          <td><%= stockItems[i].StockPrice %></td>
+        </tr>
         <% } %>
-    </ul>
+    </table>
 </section>
   </div>
 </div>

@@ -47,6 +47,7 @@ module.exports.routes = {
   // },
   'post /importer': 'StockImportController.upload',
   'get /parseJson': 'StockImportController.parseJson',
+  'get /downloadLatest': 'StockImportController.downloadLatest',
   'get /importComplete': {
     view: 'importComplete',
     locals: {
