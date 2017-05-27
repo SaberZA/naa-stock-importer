@@ -50,13 +50,12 @@ module.exports = {
     });
   },
   downloadLatest: function (req, res) {
-    var filePath = path.resolve(__dirname, '../../stock.json');
-    fs.readFile(filePath, function (err, fileData) {
-      if (err) {
+    StockListingDbService.getLatestStockListing()
+      .then(function (latestListing) {
+        res.attachment('stock.json');
+        return res.send(200, latestListing.payload);
+      }).catch(function (err) {
         return res.serverError(err);
-      }
-      res.attachment('stock.json');
-      return res.send(200, fileData)
-    });
+      });
   }
 };
