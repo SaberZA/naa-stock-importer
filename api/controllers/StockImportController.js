@@ -7,8 +7,6 @@
 
 var fs = require('fs');
 var xlsxj = require("xlsx-to-json");
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('temp-db.sqlite');
 var path = require('path');
 
 module.exports = {
