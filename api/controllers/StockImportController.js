@@ -32,11 +32,11 @@ module.exports = {
         return res.serverError('invalid upload format!');
       }
 
-      var folder = "imports";
+      // var folder = "imports";
       var todayString = DateService.dateToday();
-      var outputFileName = "stock-" + todayString + ".json";
+      var outputFileName = path.resolve(__dirname, "stock-" + todayString + ".json");
 
-      XlsxToJsonService.convert(files[0].fd, folder + "/" + outputFileName)
+      XlsxToJsonService.convert(files[0].fd, outputFileName)
         .then(StockListingDbService.saveStockListing)
         .then(function (listingRecord) {
 
