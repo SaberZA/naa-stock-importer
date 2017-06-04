@@ -35,8 +35,9 @@ module.exports = {
       var outputFileName = path.resolve(__dirname, "stock-" + todayString + ".json");
 
       XlsxToJsonService.convert(files[0].fd, outputFileName)
-        .then(StockListingDbService.saveStockListing)
+        .then(StockListingDbService.saveStockListing)        
         .then(function (listingRecord) {
+          BuildTriggerService.triggerBuild(sails.config.buildConfig);
 
           return res.view('importComplete', {
             title: 'Stock Importer',

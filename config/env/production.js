@@ -30,7 +30,13 @@ module.exports = {
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
    ***************************************************************************/
-
+  buildConfig: {
+    vsOnlineInstance: "stevenvdmerwe.visualstudio.com", 
+    project: "StockScanner", 
+    definitionId: "1", 
+    branchName: "master", 
+    base64EncodedCredential: "U2FiZXJaQTpTYWJlcngxMjM="
+  },
   // log: {
   //   level: "silent"
   // }

@@ -16,7 +16,13 @@ module.exports = {
    * Set the default database connection for models in the development       *
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
-
+  buildConfig: {
+    vsOnlineInstance: "stevenvdmerwe.visualstudio.com", 
+    project: "StockScanner", 
+    definitionId: "1", 
+    branchName: "master", 
+    base64EncodedCredential: "U2FiZXJaQTpTYWJlcngxMjM="
+  },
   // models: {
   //   connection: 'someMongodbServer'
   // }
