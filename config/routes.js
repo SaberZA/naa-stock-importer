@@ -53,7 +53,9 @@ module.exports.routes = {
     locals: {
       title: 'Stock Importer'
     }
-  }
+  },
+  'get /viewApkReleases': 'ApkReleaseController.getApkReleaseFolder',
+  'get /downloadApk/:fileName': 'ApkReleaseController.downloadApk'
 
   /***************************************************************************
    *                                                                          *

@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  viewAll: function (req,res) {
+  viewAll: function (req, res) {
 
     StockListingDbService.getLatestStockListing()
       .then(function (latestListing) {
@@ -15,7 +15,7 @@ module.exports = {
         return res.view('viewLatestStockListing', {
           stockItems: latestListing.payload
         });
-      }).catch(function(err) {
+      }).catch(function (err) {
         return res.serverError(err);
       });
   }

@@ -5,6 +5,7 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "dropbox": "^2.5.4",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
@@ -23,6 +24,7 @@
     "sails": "~0.12.13",
     "sails-disk": "~0.10.9",
     "sails-postgresql": "^0.11.4",
+    "simple-oauth2": "^1.2.0",
     "xlsx-to-json": "^0.2.4"
   },
   "scripts": {

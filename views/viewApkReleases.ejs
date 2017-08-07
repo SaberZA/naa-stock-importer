@@ -1,0 +1,21 @@
+<div class="default-page">
+  <div class="header">
+    <h1 id="main-title" class="container"><%= __('NAA Stock Importer') %></h1>
+    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+  </div>
+  <div class="main container clearfix">
+    <h2>APK Releases</h2>    
+    <table>
+      <tr>
+        <th>File Name</th>
+        <th>Download</th>
+      </tr>
+    <% for (var i=0; i < files.length; i++) { %>
+        <tr>
+          <td><%= files[i].name %></td> 
+          <td><a href="<%= files[i].downloadLink %>">Download</a></td>         
+        </tr>
+        <% } %>
+    </table>
+  </div>
+</div>
