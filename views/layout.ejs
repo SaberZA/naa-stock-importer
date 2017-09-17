@@ -47,12 +47,16 @@
 
   <% if (req.session.me) { %>
     <a href="/logout">Logout</a>
+    <%- body %>
     <% } else { %>
     <a href="/login">Login</a> | <a href="/signup">Signup</a>
     <% } 
   %>
+  <% if ((!req.session.me) && (req.path == '/login' || req.path == '/signup')) { %>
+    <%- body %>
+    <% }
+  %>
   
-  <%- body %>
 
 
 
