@@ -23,9 +23,9 @@ module.exports = {
     branchName: "master", 
     base64EncodedCredential: "U2FiZXJaQTpTYWJlcngxMjM="
   },
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+  models: {
+    connection: 'naaPostgresServer'
+  },
   hookTimeout: 90000
 
 };

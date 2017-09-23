@@ -37,9 +37,9 @@ module.exports = {
     branchName: "master", 
     base64EncodedCredential: "U2FiZXJaQTpTYWJlcngxMjM="
   },
-  // log: {
-  //   level: "silent"
-  // }
+  models: {
+    connection: 'naaPostgresServer'
+  },
   hookTimeout: 90000
 
 };
