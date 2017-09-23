@@ -74,14 +74,6 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  // naaPostgresServer: {
-  //   adapter: 'sails-postgresql',
-  //   host: 'ec2-176-34-111-152.eu-west-1.compute.amazonaws.com',
-  //   user: 'ezlzxlhixsvdsr', // optional
-  //   password: '6cd420fac3196b27174018431e7f28b3ada5f6180d7d56338a4875903374023b', // optional
-  //   database: 'dbilah9dacsik3', //optional
-  //   ssl: 'require'
-  // }
   naaPostgresServer: {
     adapter: 'sails-postgresql',
     host: process.env.DB_HOST,
@@ -90,10 +82,6 @@ module.exports.connections = {
     database: process.env.DB_NAME, //optional
     ssl: 'require'
   }
-  // naaPostgresServer: {
-  //   url: process.env.DATABASE_URL,
-  //   ssl: 'require'
-  // }
 
   /***************************************************************************
   *                                                                          *
