@@ -11,7 +11,6 @@ var dbx = new Dropbox({ accessToken: 'GRYOSTKmxi4AAAAAAAABbqv2hI0d2OxAp_HOdu3dSv
 var node_dropbox = require('node-dropbox');
 var Promise = require('bluebird');
 var api = node_dropbox.api('GRYOSTKmxi4AAAAAAAABbqv2hI0d2OxAp_HOdu3dSveTFH6l-z4bX_kSDZ0pAswc');
-api.getFile = Promise.promisify(api.getFile);
 
 module.exports = {
     getApkReleaseFolder: function(req,res) {        
@@ -34,12 +33,12 @@ module.exports = {
     },
     downloadApk: function(req,res) {
         
-        api.getFile("/"+req.param('fileName'))
-        .then(function(err, data) {
+        api.getFile("/"+req.param('fileName'), function(err, response, body) {
+            if(err) {
+                return res.serverError(err);
+            }
             res.attachment(req.param('fileName'));
-            return res.send(200, data);
-        }).catch(function(error) {
-            return res.serverError(err);
+            return res.send(200, body);
         });
 
 
