@@ -5,8 +5,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-// var Dropbox = require('dropbox');
-// var dbx = new Dropbox({ accessToken: 'GRYOSTKmxi4AAAAAAAABbqv2hI0d2OxAp_HOdu3dSveTFH6l-z4bX_kSDZ0pAswc' });
+var Dropbox = require('dropbox');
+var dbx = new Dropbox({ accessToken: 'GRYOSTKmxi4AAAAAAAABbqv2hI0d2OxAp_HOdu3dSveTFH6l-z4bX_kSDZ0pAswc' });
 
 var node_dropbox = require('node-dropbox');
 var Promise = require('bluebird');
