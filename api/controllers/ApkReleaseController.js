@@ -10,7 +10,8 @@
 
 var node_dropbox = require('node-dropbox');
 var Promise = require('bluebird');
-var api = Promise.promisifyAll(node_dropbox.api('GRYOSTKmxi4AAAAAAAABbqv2hI0d2OxAp_HOdu3dSveTFH6l-z4bX_kSDZ0pAswc'));
+var api = node_dropbox.api('GRYOSTKmxi4AAAAAAAABbqv2hI0d2OxAp_HOdu3dSveTFH6l-z4bX_kSDZ0pAswc');
+api.getFile = Promise.promisify(api.getFile);
 
 module.exports = {
     getApkReleaseFolder: function(req,res) {        
