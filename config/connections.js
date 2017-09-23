@@ -74,18 +74,18 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  naaPostgresServer: {
-    adapter: 'sails-postgresql',
-    host: 'ec2-54-247-99-159.eu-west-1.compute.amazonaws.com',
-    user: 'pkhptmuilwplkm', // optional
-    password: '06609d7a37d778a910e7e41a11d9ea3645e5c1a2eb39aecd7ad28c09db162ef8', // optional
-    database: 'd7jqvvb2453gp2', //optional
-    ssl: 'require'
-  }
   // naaPostgresServer: {
-  //   url: 'postgres://pkhptmuilwplkm:06609d7a37d778a910e7e41a11d9ea3645e5c1a2eb39aecd7ad28c09db162ef8@ec2-54-247-99-159.eu-west-1.compute.amazonaws.com:5432/d7jqvvb2453gp2',
+  //   adapter: 'sails-postgresql',
+  //   host: 'ec2-176-34-111-152.eu-west-1.compute.amazonaws.com',
+  //   user: 'pjjgzvepkgmqvn', // optional
+  //   password: 'b052c57e3f464f0cfdbf3c8cf0c7b3a2efbc2606181a1d0414d7b40fcc5c7edc', // optional
+  //   database: 'd6108t4rqridbc', //optional
   //   ssl: 'require'
   // }
+  naaPostgresServer: {
+    url: process.env.DATABASE_URL,
+    ssl: 'require'
+  }
 
   /***************************************************************************
   *                                                                          *
